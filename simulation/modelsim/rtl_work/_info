@@ -1,0 +1,110 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/boris/Documents/QuartusPrime/amba_apb_slave/simulation/modelsim
+vapb_mem_slave
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1769254057
+!i10b 1
+!s100 [JRohbmbF]Z:7GcdkXT4N1
+Id;fb@SVfkiadPY1e=<ZN`1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 apb_mem_slave_sv_unit
+S1
+R0
+w1769254016
+8C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv
+FC:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv
+L0 7
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1769254057.000000
+!s107 C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave|C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave
+Z8 tCvgOpt 0
+vmem_128x32
+R1
+R2
+!i10b 1
+!s100 `H:S3BRV=HKYT[T^B^iXG3
+ISbRG@OK1VdVbYLgE;BZ]R1
+R3
+!s105 mem_128x32_sv_unit
+S1
+R0
+w1769111216
+8C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv
+FC:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv
+L0 7
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave|C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv|
+!i113 1
+R6
+R7
+R8
+vrtl_top
+R1
+R2
+!i10b 1
+!s100 9e7iF9?6WChOdLajz852S3
+In2nzh]Af;bY87RW1c^9CJ0
+R3
+!s105 rtl_top_sv_unit
+S1
+R0
+w1769111338
+8C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/rtl_top.sv
+FC:/Users/boris/Documents/QuartusPrime/amba_apb_slave/rtl_top.sv
+L0 7
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/rtl_top.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave|C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/rtl_top.sv|
+!i113 1
+R6
+R7
+R8
+vtb_top
+R1
+R2
+!i10b 1
+!s100 3`n?0`=PlO[Bk6R>h3k]n3
+I7:a86W[8EMPK;Fz]mKA2G2
+R3
+!s105 tb_top_sv_unit
+S1
+R0
+w1769112556
+8C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/tb_top.sv
+FC:/Users/boris/Documents/QuartusPrime/amba_apb_slave/tb_top.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/tb_top.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave|C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/tb_top.sv|
+!i113 1
+R6
+R7
+R8

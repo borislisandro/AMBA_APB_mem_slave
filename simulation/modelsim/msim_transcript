@@ -1,0 +1,91 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do amba_apb_slave_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave {C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:27:37 on Jan 24,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave" C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv 
+# -- Compiling module apb_mem_slave
+# 
+# Top level modules:
+# 	apb_mem_slave
+# End time: 11:27:37 on Jan 24,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave {C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:27:37 on Jan 24,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave" C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv 
+# -- Compiling module mem_128x32
+# 
+# Top level modules:
+# 	mem_128x32
+# End time: 11:27:37 on Jan 24,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave {C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/rtl_top.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:27:37 on Jan 24,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave" C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/rtl_top.sv 
+# -- Compiling module rtl_top
+# 
+# Top level modules:
+# 	rtl_top
+# End time: 11:27:37 on Jan 24,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave {C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/tb_top.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:27:37 on Jan 24,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/boris/Documents/QuartusPrime/amba_apb_slave" C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/tb_top.sv 
+# -- Compiling module tb_top
+# 
+# Top level modules:
+# 	tb_top
+# End time: 11:27:37 on Jan 24,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_top
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_top 
+# Start time: 11:27:37 on Jan 24,2026
+# Loading sv_std.std
+# Loading work.tb_top
+# Loading work.rtl_top
+# Loading work.apb_mem_slave
+# Loading work.mem_128x32
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Starting APB Memory Test
+# Test 1: Write 0xDEADBEEF to address 0x00
+#   Write complete: addr=0x0, data=0xdeadbeef
+# Test 2: Read from address 0x00
+#   Read complete: addr=0x0, data=0x0
+# Test 3: Write 0xCAFEBABE to address 0x10
+#   Write complete: addr=0x10, data=0xcafebabe
+# Test 4: Read from address 0x10
+#   Read complete: addr=0x10, data=0x10
+# Test 5: Write 0x12345678 to address 0x7F
+#   Write complete: addr=0x7f, data=0x12345678
+# Test 6: Read from address 0x7F
+#   Read complete: addr=0x7f, data=0x12345678
+# Test 7: Re-read from address 0x00
+#   Read complete: addr=0x0, data=0x12345678
+# All tests completed
+# ** Note: $finish    : C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/tb_top.sv(98)
+#    Time: 495 ns  Iteration: 1  Instance: /tb_top
+# 1
+# Break in Module tb_top at C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/tb_top.sv line 98
+# End time: 11:33:36 on Jan 24,2026, Elapsed time: 0:05:59
+# Errors: 0, Warnings: 0

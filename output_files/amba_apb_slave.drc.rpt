@@ -1,0 +1,433 @@
+Design Assistant report for amba_apb_slave
+Sat Jan 24 10:42:42 2026
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant Summary
+  3. Parallel Compilation
+  4. Design Assistant Settings
+  5. Information only Violations
+  6. Design Assistant Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Design Assistant Summary                                                ;
++-----------------------------------+-------------------------------------+
+; Design Assistant Status           ; Analyzed - Sat Jan 24 10:42:42 2026 ;
+; Revision Name                     ; amba_apb_slave                      ;
+; Top-level Entity Name             ; rtl_top                             ;
+; Family                            ; Cyclone V                           ;
+; Total Critical Violations         ; 0                                   ;
+; Total High Violations             ; 0                                   ;
+; Total Medium Violations           ; 0                                   ;
+; Total Information only Violations ; 230                                 ;
+; - Rule T101                       ; 180                                 ;
+; - Rule T102                       ; 50                                  ;
++-----------------------------------+-------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 3           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant Settings                                                                                                                                                                ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
+; Option                                                                                                                                                               ; Setting      ; To ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
+; Design Assistant mode                                                                                                                                                ; Post-Fitting ;    ;
+; Threshold value for clock net not mapped to clock spines rule                                                                                                        ; 25           ;    ;
+; Minimum number of clock port feed by gated clocks                                                                                                                    ; 30           ;    ;
+; Minimum number of node fan-out                                                                                                                                       ; 30           ;    ;
+; Maximum number of nodes to report                                                                                                                                    ; 50           ;    ;
+; Rule C101: Gated clock should be implemented according to the Intel FPGA standard scheme                                                                             ; On           ;    ;
+; Rule C102: Logic cell should not be used to generate an inverted clock signal                                                                                        ; On           ;    ;
+; Rule C103: Gated clock does not feed at least a pre-defined number of clock ports to effectively save power                                                          ; On           ;    ;
+; Rule C104: Clock signal source should drive only clock input ports                                                                                                   ; On           ;    ;
+; Rule C105: Clock signal should be a global signal                                                                                                                    ; On           ;    ;
+; Rule C106: Clock signal source should not drive registers triggered by different clock edges                                                                         ; On           ;    ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                                                                         ; On           ;    ;
+; Rule R102: External reset signals should be synchronized using two cascaded registers                                                                                ; On           ;    ;
+; Rule R103: External reset signal should be correctly synchronized                                                                                                    ; On           ;    ;
+; Rule R104: The reset signal that is generated in one clock domain and used in another clock domain should be correctly synchronized                                  ; On           ;    ;
+; Rule R105: The reset signal that is generated in one clock domain and used in another clock domain should be synchronized                                            ; On           ;    ;
+; Rule T101: Nodes with more than the specified number of fan-outs                                                                                                     ; On           ;    ;
+; Rule T102: Top nodes with the highest number of fan-outs                                                                                                             ; On           ;    ;
+; Rule A101: Design should not contain combinational loops                                                                                                             ; On           ;    ;
+; Rule A102: Register output should not drive its own control signal directly or through combinational logic                                                           ; On           ;    ;
+; Rule A103: Design should not contain delay chains                                                                                                                    ; On           ;    ;
+; Rule A104: Design should not contain ripple clock structures                                                                                                         ; On           ;    ;
+; Rule A105: Pulses should not be implemented asynchronously                                                                                                           ; On           ;    ;
+; Rule A106: Multiple pulses should not be generated in design                                                                                                         ; On           ;    ;
+; Rule A107: Design should not contain SR latches                                                                                                                      ; On           ;    ;
+; Rule A108: Design should not contain latches                                                                                                                         ; On           ;    ;
+; Rule S101: Output enable and input of the same tri-state node should not be driven by same signal source                                                             ; On           ;    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source                                                ; On           ;    ;
+; Rule S103: More than one asynchronous port of a register should not be driven by the same signal source                                                              ; On           ;    ;
+; Rule S104: Clock port and any other port of a register should not be driven by the same signal source                                                                ; On           ;    ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains                                                                        ; On           ;    ;
+; Rule D102: Multiple data bits that are transferred across asynchronous clock domains are synchronized, but not all bits may be aligned in the receiving clock domain ; On           ;    ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains                                                              ; On           ;    ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Information only Violations                                                                                                ;
++------------------------------------------------------------------+-----------------------------------------------+---------+
+; Rule name                                                        ; Name                                          ; Fan-Out ;
++------------------------------------------------------------------+-----------------------------------------------+---------+
+; Rule T101: Nodes with more than the specified number of fan-outs ; i_clk~inputCLKENA0                            ; 4139    ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[64][26]~0   ; 31      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|always0~0             ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|addr_reg[6]     ; 103     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|addr_reg[0]     ; 477     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|addr_reg[4]     ; 542     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|addr_reg[1]     ; 477     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|addr_reg[2]     ; 471     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|addr_reg[3]     ; 471     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|addr_reg[5]     ; 513     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[0]     ; 66      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[10]~0  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[80][15]~1   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[96][18]~2   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[112][26]~3  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[68][17]~4   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[84][29]~5   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[100][18]~6  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[116][27]~7  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[72][27]~8   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[88][20]~9   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[104][1]~10  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[120][13]~11 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[76][4]~12   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[92][26]~13  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[108][12]~14 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[124][20]~15 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[66][28]~33  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[82][5]~34   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[98][20]~35  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[114][7]~36  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[70][8]~37   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[86][28]~38  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[102][10]~39 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[118][28]~40 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[74][27]~41  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[90][26]~42  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[106][16]~43 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[122][21]~44 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[78][7]~45   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[94][27]~46  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[110][24]~47 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[126][23]~48 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[32][16]~65  ; 31      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[36][21]~66  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[40][17]~67  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[44][24]~68  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[34][21]~73  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[38][28]~74  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[42][29]~75  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[46][10]~76  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[48][12]~81  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[52][16]~82  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[56][22]~83  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[60][23]~84  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[50][25]~89  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[54][22]~90  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[58][9]~91   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[62][30]~92  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[16][24]~97  ; 31      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|Decoder0~32           ; 37      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[18][28]~99  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[20][12]~101 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[22][23]~103 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[24][9]~105  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[26][21]~107 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[28][26]~109 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[30][0]~111  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[0][11]~113  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[2][28]~115  ; 31      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[4][26]~117  ; 31      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[6][21]~119  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[8][14]~121  ; 31      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[10][23]~123 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[12][16]~125 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[14][21]~127 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[1]     ; 66      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[65][6]~17   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[81][0]~18   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[97][5]~19   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[113][0]~20  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[69][6]~21   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[85][4]~22   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[101][6]~23  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[117][5]~24  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[73][6]~25   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[89][0]~26   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[105][3]~27  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[121][0]~28  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[77][6]~29   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[93][3]~30   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[109][2]~31  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[125][0]~32  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[33][0]~69   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[37][5]~70   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[41][3]~71   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[45][5]~72   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[49][4]~85   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[53][5]~86   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[57][5]~87   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[61][2]~88   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[17][0]~98   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[21][2]~102  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[25][4]~106  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[29][4]~110  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[1][23]~130  ; 31      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[5][0]~118   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[9][0]~122   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[13][0]~126  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[2]     ; 66      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[67][1]~49   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[83][4]~50   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[99][5]~51   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[115][6]~52  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[75][1]~57   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[91][3]~58   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[107][5]~59  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[123][1]~60  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[35][0]~77   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[43][5]~79   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[51][4]~93   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[59][3]~95   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[19][1]~100  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[27][4]~108  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[3][1]~116   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[11][1]~124  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[3]     ; 66      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[71][6]~53   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[87][4]~54   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[103][1]~55  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[119][2]~56  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[39][5]~78   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[55][5]~94   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[23][1]~104  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[7][1]~120   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[4]     ; 66      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[79][6]~61   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[111][6]~63  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[47][1]~80   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[15][2]~128  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[5]     ; 66      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[95][1]~62   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[31][1]~112  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[6]     ; 66      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[63][1]~96   ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[7]     ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array[127][5]~64  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[8]     ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[9]     ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[10]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[11]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[12]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[13]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[14]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[15]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[16]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[17]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[18]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[19]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[20]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[21]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[22]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[23]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[24]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[25]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[26]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[27]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[28]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[29]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[30]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|data_reg[31]    ; 128     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array~16          ; 63      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|o_PRDATA[6]~21  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; apb_mem_slave:u_apb_mem_slave|o_PRDATA[6]~22  ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array~129         ; 63      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array~132         ; 63      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array~134         ; 63      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array~136         ; 63      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array~138         ; 63      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; mem_128x32:u_mem_128x32|mem_array~141         ; 63      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; i_clk~inputCLKENA0                            ; 4139    ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|addr_reg[4]     ; 542     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|addr_reg[5]     ; 513     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|addr_reg[0]     ; 477     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|addr_reg[1]     ; 477     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|addr_reg[2]     ; 471     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|addr_reg[3]     ; 471     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[23]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[28]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[16]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[13]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[12]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[18]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[20]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[8]     ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[27]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[7]     ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[19]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[26]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[21]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[25]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[17]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[24]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[11]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[14]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[15]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[9]     ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[31]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[30]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[22]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[29]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[10]    ; 128     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|addr_reg[6]     ; 103     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[0]     ; 66      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[4]     ; 66      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[3]     ; 66      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[2]     ; 66      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[5]     ; 66      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[1]     ; 66      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|data_reg[6]     ; 66      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; mem_128x32:u_mem_128x32|mem_array~138         ; 63      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; mem_128x32:u_mem_128x32|mem_array~136         ; 63      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; mem_128x32:u_mem_128x32|mem_array~134         ; 63      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; mem_128x32:u_mem_128x32|mem_array~132         ; 63      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; mem_128x32:u_mem_128x32|mem_array~16          ; 63      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; mem_128x32:u_mem_128x32|mem_array~129         ; 63      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; mem_128x32:u_mem_128x32|mem_array~141         ; 63      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; mem_128x32:u_mem_128x32|Decoder0~32           ; 37      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; apb_mem_slave:u_apb_mem_slave|o_PRDATA[6]~22  ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; mem_128x32:u_mem_128x32|mem_array[68][17]~4   ; 32      ;
++------------------------------------------------------------------+-----------------------------------------------+---------+
+
+
++---------------------------+
+; Design Assistant Messages ;
++---------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Design Assistant
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sat Jan 24 10:42:40 2026
+Info: Command: quartus_drc amba_apb_slave -c amba_apb_slave
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'amba_apb_slave.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332144): No user constrained base clocks found in the design
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (308046): (Information) Rule T101: Nodes with more than the specified number of fan-outs. (Value defined:30). Found 180 node(s) with highest fan-out.
+    Info (308011): Node  "i_clk~inputCLKENA0" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/rtl_top.sv Line: 10
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[64][26]~0" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|always0~0"
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[6]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[0]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[4]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[1]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[2]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[3]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[5]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[0]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[10]~0" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[80][15]~1" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[96][18]~2" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[112][26]~3" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[68][17]~4" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[84][29]~5" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[100][18]~6" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[116][27]~7" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[72][27]~8" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[88][20]~9" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[104][1]~10" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[120][13]~11" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[76][4]~12" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[92][26]~13" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[108][12]~14" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[124][20]~15" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[66][28]~33" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[82][5]~34" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308011): Node  "mem_128x32:u_mem_128x32|mem_array[98][20]~35" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/mem_128x32.sv Line: 27
+    Info (308002): Truncated list of Design Assistant messages to 30 messages. Go to sections under Design Assistant section of Compilation Report for complete lists of Design Assistant messages generated.
+Info (308044): (Information) Rule T102: Top nodes with the highest number of fan-outs. (Value defined:50). Found 50 node(s) with highest fan-out.
+    Info (308011): Node  "i_clk~inputCLKENA0" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/rtl_top.sv Line: 10
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[4]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[5]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[0]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[1]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[2]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|addr_reg[3]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[23]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[28]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[16]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[13]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[12]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[18]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[20]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[8]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[27]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[7]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[19]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[26]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[21]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[25]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[17]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[24]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[11]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[14]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[15]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[9]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[31]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[30]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308011): Node  "apb_mem_slave:u_apb_mem_slave|data_reg[22]" File: C:/Users/boris/Documents/QuartusPrime/amba_apb_slave/apb_mem_slave.sv Line: 77
+    Info (308002): Truncated list of Design Assistant messages to 30 messages. Go to sections under Design Assistant section of Compilation Report for complete lists of Design Assistant messages generated.
+Info (308007): Design Assistant information: finished post-fitting analysis of current design -- generated 230 information messages and 0 warning messages
+Info: Quartus Prime Design Assistant was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4808 megabytes
+    Info: Processing ended: Sat Jan 24 10:42:42 2026
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
